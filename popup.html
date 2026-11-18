@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>BTC Price</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      width: 240px;
+      padding: 16px;
+      font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: Canvas;
+      color: CanvasText;
+    }
+    .label { font-size: 12px; opacity: 0.65; letter-spacing: 0.04em; text-transform: uppercase; }
+    .price { font-size: 28px; font-weight: 650; margin: 4px 0 2px; font-variant-numeric: tabular-nums; }
+    .meta { font-size: 12px; opacity: 0.65; min-height: 1.4em; }
+    .row { display: flex; gap: 8px; margin-top: 14px; align-items: center; }
+    select, button {
+      font: inherit;
+      padding: 5px 8px;
+      border-radius: 6px;
+      border: 1px solid color-mix(in srgb, CanvasText 25%, transparent);
+      background: Canvas;
+      color: CanvasText;
+    }
+    button { cursor: pointer; }
+    .error { color: #dc2626; }
+  </style>
+</head>
+<body>
+  <div class="label">Bitcoin</div>
+  <div class="price" id="price">--</div>
+  <div class="meta" id="meta">Loading...</div>
+  <div class="row">
+    <select id="currency" aria-label="Currency">
+      <option>USD</option>
+      <option>EUR</option>
+      <option>GBP</option>
+      <option>JPY</option>
+      <option>MYR</option>
+    </select>
+    <button id="refresh">Refresh</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
